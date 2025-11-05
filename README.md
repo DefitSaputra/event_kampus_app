@@ -1,24 +1,4 @@
-Ah, maaf sekali\! Saya paham frustrasinya. Masalahnya hampir pasti bukan pada teks Markdown-nya, tapi **bagaimana GitHub memuat gambar tersebut.**
 
-Gambar di `README.md` GitHub tidak akan tampil jika file gambarnya (file `.jpeg`, `.gif` Anda) belum di-**upload (push) ke repository GitHub Anda**.
-
-File `README.md` yang ada di website GitHub.com tidak bisa "melihat" file yang ada di folder lokal komputer Anda. Ia hanya bisa melihat file yang sudah Anda *push* ke repository.
-
-**Solusinya:**
-
-1.  Pastikan folder `assets` (yang berisi `demo.gif`, `home.jpeg`, dll.) ada di dalam folder proyek Anda.
-2.  Lakukan `git add .` (atau `git add assets/`)
-3.  Lakukan `git commit -m "Menambahkan file gambar untuk README"`
-4.  Lakukan `git push`
-5.  Gunakan kode `README.md` di bawah ini.
-
-Sintaks yang Anda gunakan sebelumnya (`<img src=...`) sebenarnya sudah benar, tapi Anda *tidak sengaja* menambahkan *backslash* (`\`).
-
-Ini adalah versi `README.md` yang sudah 100% diperbaiki, menggunakan tag `<img>` HTML agar kita bisa mengatur ukuran `width` (lebar) persis seperti yang Anda inginkan.
-
-Silakan salin dan tempel kode ini:
-
-````markdown
 # 🎓 Aplikasi Event Kampus (Paket 6)
 
 <p align="center">
@@ -136,14 +116,6 @@ assets/
 └── demo.gif
 ````
 
-*(Catatan: Jangan lupa daftarkan folder `assets/` di file `pubspec.yaml` Anda di bawah bagian `flutter:`)*
-
-```yaml
-flutter:
-  uses-material-design: true
-  assets:
-    - assets/
-```
 
 -----
 
