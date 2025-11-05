@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:event_kampus_app/main.dart'; // Import main.dart untuk warna
+// PERBAIKAN: Mengganti 'event_kampus_app_final' menjadi 'event_kampus_app'
+import 'package:event_kampus_app/main.dart'; 
 import '../data/models/event_model.dart';
 
 class EventCard extends StatelessWidget {
@@ -15,17 +16,13 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      // Card style sudah diatur di main.dart
-      clipBehavior: Clip.antiAlias, // Untuk memotong gambar di sudut
+      clipBehavior: Clip.antiAlias,
       child: InkWell(
         onTap: onTap,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Bagian Gambar (Banner)
             _buildImageBanner(context),
-            
-            // Bagian Teks (Konten)
             _buildTextContent(context),
           ],
         ),
@@ -33,16 +30,19 @@ class EventCard extends StatelessWidget {
     );
   }
 
-  // Widget untuk banner gambar dengan badge tanggal
+  // Widget ini yang menampilkan gambar
   Widget _buildImageBanner(BuildContext context) {
     return Stack(
       children: [
-        // Gambar Event
+        // --- INI BAGIAN PENTINGNYA ---
+        // Widget ini mengambil URL dari 'event.imageUrl'
+        // dan menampilkannya sebagai gambar.
         Image.network(
-          event.imageUrl,
+          event.imageUrl, // <-- DATA DARI LANGKAH 2
           width: double.infinity,
           height: 150,
           fit: BoxFit.cover,
+          // Ini adalah fallback jika gambar gagal dimuat
           errorBuilder: (context, error, stackTrace) {
             return Container(
               width: double.infinity,
@@ -50,13 +50,14 @@ class EventCard extends StatelessWidget {
               color: Colors.grey[200],
               child: const Icon(
                 Icons.image_not_supported_rounded,
-                color: kTextColorLight,
+                color: kTextColorLight, // kTextColorLight dari main.dart
                 size: 50,
               ),
             );
           },
         ),
-        
+        // ---------------------------------
+
         // Badge Tanggal
         Positioned(
           top: 12,
@@ -64,11 +65,12 @@ class EventCard extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
             decoration: BoxDecoration(
-              color: kSecondaryColor, // Warna aksen
+              color: kSecondaryColor, // kSecondaryColor dari main.dart
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.2),
+                  // PERBAIKAN: Menghilangkan deprecated warning
+                  color: const Color.fromRGBO(0, 0, 0, 0.2), 
                   blurRadius: 4,
                   offset: const Offset(0, 2),
                 ),
@@ -88,14 +90,15 @@ class EventCard extends StatelessWidget {
     );
   }
 
-  // Widget untuk konten teks (Judul & Lokasi)
+  // Widget ini menampilkan teks (tidak berubah)
   Widget _buildTextContent(BuildContext context) {
+    final bodyMediumColor = Theme.of(context).textTheme.bodyMedium?.color;
+    
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Judul Event
           Text(
             event.title,
             style: Theme.of(context).textTheme.headlineSmall,
@@ -103,18 +106,17 @@ class EventCard extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(height: 8),
-          
-          // Info Lokasi
           Row(
             children: [
               const Icon(Icons.location_on_rounded,
-                  size: 16, color: kPrimaryColor),
+                  size: 16, color: kPrimaryColor), // kPrimaryColor dari main.dart
               const SizedBox(width: 6),
               Expanded(
                 child: Text(
                   event.location,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: kTextColorLight,
+                        // PERBAIKAN: Menghilangkan deprecated warning
+                        color: bodyMediumColor?.withAlpha((255 * 0.7).round()),
                       ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
