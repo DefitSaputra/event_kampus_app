@@ -129,14 +129,23 @@ assets/
 
 ### 🖼️ Screenshot Aplikasi
 
-| Halaman | Tampilan |
-|----------|-----------|
-| **Home (Light)** | (assets/home.jpeg) |
-| **Detail Event** | (assets/detail.jpeg) |
-| **Menu Drawer** | (assets/side_bar.jpeg) |
-| **Agenda** | (assets/agenda.jpeg) |
-| **Kontak** | (assets/contact.jpeg) |
-| **Tentang** | (assets/about.jpeg) |
+#### 🏠 Home (Light)
+![Home](assets/home.jpeg)
+
+#### 📅 Detail Event
+![Detail Event](assets/detail.jpeg)
+
+#### 📂 Menu Drawer
+![Menu Drawer](assets/side_bar.jpeg)
+
+#### 🗓️ Agenda
+![Agenda](assets/agenda.jpeg)
+
+#### ✉️ Kontak
+![Kontak](assets/contact.jpeg)
+
+#### ℹ️ Tentang
+![Tentang](assets/about.jpeg)
 
 -----
 
