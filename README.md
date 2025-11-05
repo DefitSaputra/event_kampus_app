@@ -123,9 +123,7 @@ assets/
 
 ### 🎥 Demo GIF
 
-\<p align="center"\>
-\<img src="assets/demo.gif" alt="Demo Aplikasi" width="300"\>
-\</p\>
+![Demo Aplikasi](assets/demo.gif)
 
 -----
 
@@ -133,12 +131,12 @@ assets/
 
 | Halaman | Tampilan |
 |----------|-----------|
-| **Home (Light)** | \<img src="assets/home.jpeg" alt="Halaman Home" width="250"\> |
-| **Detail Event** | \<img src="assets/detail.jpeg" alt="Halaman Detail Event" width="250"\> |
-| **Menu Drawer** | \<img src="assets/side\_bar.jpeg" alt="Menu Drawer" width="250"\> |
-| **Agenda** | \<img src="assets/agenda.jpeg" alt="Halaman Agenda" width="250"\> |
-| **Kontak** | \<img src="assets/contact.jpeg" alt="Halaman Kontak" width="250"\> |
-| **Tentang** | \<img src="assets/about.jpeg" alt="Halaman Tentang" width="250"\> |
+| **Home (Light)** | (assets/home.jpeg) |
+| **Detail Event** | (assets/detail.jpeg) |
+| **Menu Drawer** | (assets/side_bar.jpeg) |
+| **Agenda** | (assets/agenda.jpeg) |
+| **Kontak** | (assets/contact.jpeg) |
+| **Tentang** | (assets/about.jpeg) |
 
 -----
 
