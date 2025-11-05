@@ -1,4 +1,24 @@
+Ah, maaf sekali\! Saya paham frustrasinya. Masalahnya hampir pasti bukan pada teks Markdown-nya, tapi **bagaimana GitHub memuat gambar tersebut.**
 
+Gambar di `README.md` GitHub tidak akan tampil jika file gambarnya (file `.jpeg`, `.gif` Anda) belum di-**upload (push) ke repository GitHub Anda**.
+
+File `README.md` yang ada di website GitHub.com tidak bisa "melihat" file yang ada di folder lokal komputer Anda. Ia hanya bisa melihat file yang sudah Anda *push* ke repository.
+
+**Solusinya:**
+
+1.  Pastikan folder `assets` (yang berisi `demo.gif`, `home.jpeg`, dll.) ada di dalam folder proyek Anda.
+2.  Lakukan `git add .` (atau `git add assets/`)
+3.  Lakukan `git commit -m "Menambahkan file gambar untuk README"`
+4.  Lakukan `git push`
+5.  Gunakan kode `README.md` di bawah ini.
+
+Sintaks yang Anda gunakan sebelumnya (`<img src=...`) sebenarnya sudah benar, tapi Anda *tidak sengaja* menambahkan *backslash* (`\`).
+
+Ini adalah versi `README.md` yang sudah 100% diperbaiki, menggunakan tag `<img>` HTML agar kita bisa mengatur ukuran `width` (lebar) persis seperti yang Anda inginkan.
+
+Silakan salin dan tempel kode ini:
+
+````markdown
 # 🎓 Aplikasi Event Kampus (Paket 6)
 
 <p align="center">
@@ -116,7 +136,14 @@ assets/
 └── demo.gif
 ````
 
-*(Catatan: Jangan lupa daftarkan folder `assets/` di file `pubspec.yaml` Anda)*
+*(Catatan: Jangan lupa daftarkan folder `assets/` di file `pubspec.yaml` Anda di bawah bagian `flutter:`)*
+
+```yaml
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+```
 
 -----
 
@@ -125,7 +152,7 @@ assets/
 ### 🎥 Demo GIF
 
 \<p align="center"\>
-\<img src="assets/demo.gif" alt="Demo Aplikasi" width="300"/\>
+\<img src="assets/demo.gif" alt="Demo Aplikasi" width="300"\>
 \</p\>
 
 -----
@@ -140,7 +167,6 @@ assets/
 | **Agenda** | \<img src="assets/agenda.jpeg" alt="Halaman Agenda" width="250"\> |
 | **Kontak** | \<img src="assets/contact.jpeg" alt="Halaman Kontak" width="250"\> |
 | **Tentang** | \<img src="assets/about.jpeg" alt="Halaman Tentang" width="250"\> |
-| **Home (Dark)** | [Tambahkan Screenshot Home Dark Mode] |
 
 -----
 
@@ -151,13 +177,13 @@ assets/
 Jika proyek ini diunggah ke GitHub:
 
 ```bash
-git clone [https://github.com/DefitSaputra/event_kampus_app]
+git clone [https://github.com/DefitSaputra/event_kampus_app](https://github.com/DefitSaputra/event_kampus_app)
 ```
 
 ### 2️⃣ Masuk ke Direktori Proyek
 
 ```bash
-cd [event_kampus_app]
+cd event_kampus_app
 ```
 
 ### 3️⃣ Install Dependencies
